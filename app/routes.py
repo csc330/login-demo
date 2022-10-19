@@ -33,7 +33,8 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/change_password')
+@app.route('/change_password',  methods=['GET', 'POST'])
+@login_required
 def change_password():
     form = ChangePasswordForm()
     '''
